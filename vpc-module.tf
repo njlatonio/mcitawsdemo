@@ -28,14 +28,14 @@ module "vpc" {
   enable_dns_support   = true
 
 
-  tags = local.common_tags
-  vpc_tags = local.common_tags
+  #tags = local.common_tags
+  #vpc_tags = local.common_tags
 
   # Additional Tags to Subnets
   public_subnet_tags = {
     Type = "Public Subnets"
   }
-  private_subnet_tags = {
+  #private_subnet_tags = {
     Type = "Private Subnets"
   }  
   database_subnet_tags = {
