@@ -33,5 +33,5 @@ module "private_sg" {
   ingress_cidr_blocks = ["0.0.0.0/0"] # Required for NLB
   # Egress Rule - all-all open
   egress_rules = ["all-all"]
-  tags = local.common_tags
+  #tags = local.common_tags
 }
