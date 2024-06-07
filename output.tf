@@ -60,6 +60,7 @@ output "public_bastion_sg_group_name" {
   value       = module.public_bastion_sg.security_group_name
 }
 
+/*
 # Private EC2 Instances Security Group Outputs
 ## private_sg_group_id
 output "private_sg_group_id" {
@@ -81,3 +82,4 @@ output "private_sg_group_name" {
   #value       = module.private_sg.this_security_group_name
   value       = module.private_sg.security_group_name
 }
+*/
