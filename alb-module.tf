@@ -1,15 +1,19 @@
-module "alb" {
-  source = "terraform-aws-modules/alb/aws"
+# Terraform AWS Network Load Balancer (NLB)
+module "nlb" {
+  source  = "terraform-aws-modules/alb/aws"
+  version = "9.4.0"
 
-  name    = "myalb"
-  vpc_id  = module.vpc.vpc_id
-  subnets = module.vpc.public_subnets
+  name_prefix = "mynlb-"
+  load_balancer_type               = "network"
+  vpc_id                           = module.vpc.vpc_id
+  dns_record_client_routing_policy = "availability_zone_affinity"
   security_groups = [module.loadbalancer_sg.security_group_id]
-  
-# For example only
-  enable_deletion_protection = false
 
-  client_keep_alive = 7200
+  # https://github.com/hashicorp/terraform-provider-aws/issues/17281
+  subnets = module.vpc.public_subnets
+
+  # For example only
+  enable_deletion_protection = false
 
 # Listeners
   listeners = {
@@ -53,6 +57,5 @@ module "alb" {
       }# End Health Check Block
     }# End Target Group-1: mytg1
   }
-
-  #tags = local.tags
-}
+  tags = local.common_tags
+}# End NLB Module
