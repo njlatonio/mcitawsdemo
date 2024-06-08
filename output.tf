@@ -110,3 +110,30 @@ output "ec2_bastion_public_ip" {
   description = "List of public IP addresses assigned to the instances"
   value       = module.ec2_public.public_ip 
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+# Load Balancer
+output "id" {
+  description = "The ID and ARN of the load balancer we created"
+  value       = module.nlb.id
+}
+
+output "arn" {
+  description = "The ID and ARN of the load balancer we created"
+  value       = module.nlb.arn
+}
+
+output "arn_suffix" {
+  description = "ARN suffix of our load balancer - can be used with CloudWatch"
+  value       = module.nlb.arn_suffix
+}
+
+output "dns_name" {
+  description = "The DNS name of the load balancer"
+  value       = module.nlb.dns_name
+}
+
+output "zone_id" {
+  description = "The zone_id of the load balancer to assist with creating DNS records"
+  value       = module.nlb.zone_id
+}
