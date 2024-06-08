@@ -1,3 +1,4 @@
+# To create a WAFv2 Web ACL resource
 resource "aws_wafv2_web_acl" "example" {
   name        = "managed-rule-example"
   description = "Example of a managed rule."
