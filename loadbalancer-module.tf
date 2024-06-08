@@ -57,5 +57,5 @@ module "nlb" {
       }# End Health Check Block
     }# End Target Group-1: mytg1
   }
-  tags = local.common_tags
+ # tags = local.common_tags
 }# End NLB Module
