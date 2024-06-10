@@ -1,6 +1,6 @@
 module "waf" {
   source = "./waf/"
 
-  web_acl_name = aws_wafv2_web_acl.example.name
+  web_acl_name = var.web_acl_name
   alb_arn = module.nlb.arn
 }
