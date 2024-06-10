@@ -101,5 +101,6 @@ variable "instance_keypair" {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 # AWS Web ACL variables
 variable "web_acl_name" {
-  type=string  
+  type=string
+  default=aws_wafv2_web_acl.example.name
 }
