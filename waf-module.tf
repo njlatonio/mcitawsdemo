@@ -8,8 +8,8 @@ module "waf" {
 */
 
 module "waf" {
-  source = "./"
+  #source = "./"
 
   web_acl_name = var.web_acl_name
-  #alb_arn = module.nlb.arn
+  alb_arn = module.nlb.arn
 }
