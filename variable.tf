@@ -103,6 +103,3 @@ variable "instance_keypair" {
 variable "web_acl_name" {
   type=string
 }
-variable "alb_arn" {
-  type=string
-}
